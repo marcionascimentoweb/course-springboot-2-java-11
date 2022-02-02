@@ -43,8 +43,8 @@ public class OrderItem implements Serializable {
 	}
 	
 	//Colocou manual
-		public Product getProduct() {
-			return id.getProduct();
+	public Product getProduct() {
+		return id.getProduct();
 		}
 		
 		//Colocou manual
