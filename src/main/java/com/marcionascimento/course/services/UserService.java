@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.marcionascimento.course.entities.User;
 import com.marcionascimento.course.repositories.UserRepository;
+import com.marcionascimento.course.services.exceptions.ResourceNotFoundException;
 
 @Service
 public class UserService {
@@ -23,7 +24,7 @@ public class UserService {
 	//Listar por Id
 	public User findById(Long id) {
 		Optional<User> obj = repository.findById(id);
-		return obj.get();
+		return obj.orElseThrow(() -> new ResourceNotFoundException(id));
 	}
 	
 	//Salvar
